@@ -1,0 +1,351 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="origin">
+    <meta name="robots" content="noindex">
+    <meta id="no-user-scale" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="theme-color" content="#ffffff">
+
+    <title>VCET chatbot | TARS</title>
+    
+    
+
+    
+        <link rel="shortcut icon" href="https://tars-file-upload.s3.amazonaws.com/j00jSE/3fab73f7695b3afdae8cbf8d016e5b6e--download-removebg-preview.png" type="image/x-icon" />
+    
+
+    
+        <meta property="og:image" content="https://tars-data.s3.amazonaws.com/j00jSE/robot_profiles/Bota._.j00jSE.png"/>
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://s3-ap-southeast-1.amazonaws.com/tars-bot/assets/lib.min-2d3f0661.css"/>
+    <link rel="stylesheet" href="https://s3-ap-southeast-1.amazonaws.com/tars-bot/assets/app.min-4df936bd.css"/>
+    
+
+    
+  <!-- Custom Design -->
+  <style class="custom-styling" type="text/css">
+
+    
+        
+          
+        
+    
+
+    
+        
+    
+
+    
+      body {
+        background-color: #434a54;
+        
+      }
+    
+
+    
+      .logo {
+          background-image : url(https://tars-file-upload.s3.amazonaws.com/j00jSE/3b305351d627117ff845d078b8c6be8a--download-removebg-preview.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+          width : 25% ;
+          height : 10% ;
+          border-radius: 10px;
+          right : 6% ;
+          top : 6%
+        }
+    
+
+    
+      .chatArea {
+        background-color: #ffffff;
+        
+        
+      }
+    
+
+    
+      .powered-by {
+        background-color: #f1f1f1;
+        color: #000;
+      }
+    
+
+    
+      .user-chat-bubble, .inputMessage, .inputMessage[disabled], .card-wrapper, .card-block, .card.choose.selected .card-footer, .autogrow_input_wrapper{
+        background-color: #f1f1f1;
+        color: #000;
+        
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+        
+      }
+
+      #wave .dot {
+        background-color: #000;
+      }
+
+      #send_button_icon {
+        color:#777;
+      }
+
+      .rating-container {
+        color: #f1f1f1;
+      }
+
+      .card-block {
+        border-top: 1px solid rgb(217, 217, 217);
+      }
+      .card-footer {
+        background-color: rgb(217, 217, 217);
+      }
+      .card-footer .text-muted {
+        color: #777;
+      }
+      .card-nav-button button {
+        background-color: #f1f1f1;
+        color: #000;
+      }
+
+
+      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:#777;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:#777;
+        opacity:1;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:#777;
+        opacity:1;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:#777;
+      }
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color:#777;
+      }
+
+
+      .calendar_time .mbsc-ios .mbsc-cal-btn-txt,
+      .calendar_time .mbsc-ios .mbsc-cal-hl-now .mbsc-cal-today,
+      .calendar_time .mbsc-ios .mbsc-cal-day,
+      .calendar_time .time_slot a {
+        color: #000;
+      }
+
+      .calendar_time .mbsc-ios, .calendar_time .mbsc-ios.mbsc-fr-inline .mbsc-fr-w {
+        background-color: #f1f1f1;
+      }
+
+      .calendar_time .mbsc-cal-btnc-ym .mbsc-cal-month,
+      .calendar_time .mbsc-cal-btnc-ym .mbsc-cal-year,
+      .calendar_time .mbsc-ios .mbsc-cal th {
+        color: #777;
+      }
+    
+
+
+    
+      .my-chat-bubble, .choose, .choose[href], #suggestion-menu-container > * {
+        background-color: #0084ff;
+        color: #fff;
+        
+        
+      }
+
+      .send-enabled #send_button_icon, .pass-button #send_button_icon, .done-button #send_button_icon {
+        color: #0084ff;
+      }
+
+      .rating-container .rating-stars {
+        color: #0084ff;
+      }
+
+      .choose.selected, .card.choose.selected .card-wrapper, .card.choose.selected .card-block {
+        background-color: rgb(0, 119, 230);
+        color: #fff;
+      }
+
+      .card.choose.selected {
+        border: 1px solid #0084ff;
+      }
+
+      .card-nav-button button:hover {
+        background-color: #0084ff;
+        color: #fff;
+      }
+
+
+      .calendar_time .mbsc-ios.mbsc-fr.mbsc-calendar .mbsc-cal-tabs .mbsc-cal-tab .mbsc-cal-tab-i,
+      .calendar_time .mbsc-ios.mbsc-no-touch .mbsc-cal-day.mbsc-cal-day-v:hover .mbsc-cal-day-fg,
+      .calendar_time .mbsc-ios .mbsc-cal .mbsc-cal-day-sel .mbsc-cal-day-fg,
+      .calendar_time .time_slot:hover a,
+      .calendar_time .mbsc-cal-sc .mbsc-cal-sc-sel .mbsc-cal-sc-cell-i {
+        background-color: #0084ff;
+        color: #fff;
+      }
+
+
+      .calendar_time .mbsc-ios.mbsc-fr.mbsc-calendar .mbsc-cal-tabs .mbsc-cal-tab.mbsc-cal-tab-sel .mbsc-cal-tab-i{
+        background-color: rgb(0, 119, 230);
+        color: #fff;
+      }
+
+      .calendar_time .time_slot a{
+        background-color: transparent;
+        /* border: solid 1px; */
+        /* border-color: #0084ff; */
+      }
+
+      .calendar_time  a.slot_selected {
+        background-color: #0084ff;
+        color: #fff;
+      }
+      .user-feedback svg {
+        fill : "none"
+      }
+      .user-feedback.thumbs-up svg.active {
+        fill : #0084ff
+      }
+
+      .user-feedback.thumbs-down svg.active {
+        fill : #0084ff
+      }
+    
+
+
+    
+
+  </style>
+
+
+
+    
+</head>
+
+<body
+class="chat-main-body"
+style="padding:0px;"
+locale="en"
+convid="j00jSE"
+data-plan="free"
+data-fp_ref=""
+
+data-send-ga-events="no"
+
+
+
+
+data-goal-gambits="1,2,4,5,6,7,8,9,10,11,12,13,14,15"
+
+
+data-userip="106.196.17.63"
+
+
+>
+
+
+
+
+    <ul class="pages">
+        <li class="chat page">
+            <div class="logo" style="position : absolute"></div>
+            <div class="chatArea">
+                <ul class="messages">
+                    <li class="log col-xs-12 power">
+                        <span class="col-xs-4 col-xs-offset-4 powered-by"><a href="https://www.hellotars.com/?utm_campaign=j00jSE&utm_content=convbot_banner&utm_medium=page_convbot_Desktop&utm_source=hostname" target="_blank"><b>AI</b> ⚡ <b>TARS</b></a>
+                        </span>
+                    </li>
+                    <li class="message col-xs-9 pull-left typing" style="display: list-item;">
+                        <div class="messageBody ui-chatbox-msg alert chat-bubble user-chat-bubble padding-no-margin pull-left">
+                            <span class=""><div id="wave"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="calibrateDiv" style="position: absolute;"></div>
+            <div class="inputContainter">
+              
+                <input class="inputMessage" placeholder="Please wait…" disabled/>
+                <button id="send-button" class="sendButton">
+                    <i id="send_button_icon" class="fa" aria-hidden="true"></i>
+                </button>
+              
+            </div>
+            <div id="snackbar-container" class="snackBar" style="display: none">
+                <ul class="list-group selectOptions snackbar-options"></ul>
+            </div>
+            <div id="suggestion-menu-container" class="search-suggestions" style="display: none">
+                <ul class="list-group search-suggestions-options"></ul>
+            </div>
+        </li>
+    </ul>
+    <script type="text/javascript">var istart = +new Date();</script>
+    
+    <script
+    async
+    id="tarsboot"
+    src="https://s3-ap-southeast-1.amazonaws.com/tars-bot/assets/lib.min-a7383919.js">
+</script>
+
+    </script>
+    
+
+
+    
+    <!-- GA -> UA -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63097026-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-63097026-1');
+        // gtag('config', 'G-GR63X9MSSV');
+        
+        
+        
+        
+    </script> -->
+
+    <!-- GA -> GA4 Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PT49NDTSN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // gtag('config', 'UA-63097026-1');
+        // gtag('config', 'G-QZ8RK3FF34');
+        gtag('config', 'G-0PT49NDTSN');
+        
+        
+        
+        
+    </script>
+    
+
+    <script>
+      var chatbot_frontend_features = {}
+      
+    </script>
+
+    <preData id="pre_data" style="display:none;"><preData>
+    <script>
+      addEventListener("resize", function() {
+        if(document && window && window.visualViewport && window.visualViewport.height) {
+          var viewport = document.querySelector("meta[name=viewport]");
+          viewport.setAttribute("content", "width=device-width, initial-scale=1, user-scalable=no, interactive-widget=resizes-content" + ", height=" + window.visualViewport.height + "px");
+        }
+      })
+    </script>
+</body>
+
+</html>
